@@ -7,33 +7,21 @@ permissions:
 
 jobs:
   super-lint:
-    name: Lint code base
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Run Super-Linter (NO FAIL MODE)
-        uses: super-linter/super-linter@v8
-        continue-on-error: true
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@9e863354e3ff62e0727d37183162c4a88873df41
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # Scan everything but never fail
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
 
-          # Disable strict failure rules
           ERROR_ON_LINT_WARNINGS: false
-          ERROR_ON_MISSING_EXEC_BIT: false
-
-          # Turn off noisy linters (common error sources)
-          VALIDATE_MARKDOWN: false
-          VALIDATE_YAML: false
-          VALIDATE_JSON: false
-          VALIDATE_BASH: false
-          VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_PYTHON_BLACK: false
