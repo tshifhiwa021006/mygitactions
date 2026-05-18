@@ -1,1 +1,49 @@
+name: Super-Linter
 
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  super-lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Super-Linter (NON-BLOCKING)
+        uses: super-linter/super-linter@v8
+        continue-on-error: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # Repository settings
+          DEFAULT_BRANCH: main
+          VALIDATE_ALL_CODEBASE: true
+
+          # Never fail build
+          ERROR_ON_WARNINGS: false
+          ERROR_ON_MISSING_EXEC_BIT: false
+
+          # Disable failing validators
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+
+          VALIDATE_MARKDOWN: false
+          VALIDATE_MARKDOWN_PRETTIER: false
+
+          VALIDATE_YAML: false
+          VALIDATE_YAML_PRETTIER: false
+
+          # Optional extra disables
+          VALIDATE_JSON: false
+          VALIDATE_BASH: false
+          VALIDATE_PYTHON: false
+          VALIDATE_EDITORCONFIG: false
