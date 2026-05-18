@@ -1,27 +1,208 @@
-name: Super-Linter
-
-on: push
-
-permissions:
-  contents: read
-
-jobs:
-  super-lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Run Super-Linter
-        uses: super-linter/super-linter@9e863354e3ff62e0727d37183162c4a88873df41
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          VALIDATE_ALL_CODEBASE: true
-          DEFAULT_BRANCH: main
-
-          ERROR_ON_LINT_WARNINGS: false
+fix error Run super-linter/super-linter@v8
+  env:
+    VALIDATE_ALL_CODEBASE: true
+    DEFAULT_BRANCH: main
+    GITHUB_TOKEN: ***
+/usr/bin/docker run --name ghcriosuperlintersuperlinterv860_b81299 --label 1b5e0a --workdir /github/workspace --rm -e "VALIDATE_ALL_CODEBASE" -e "DEFAULT_BRANCH" -e "GITHUB_TOKEN" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RU
+Super-Linter initialization
+  2026-05-18 13:03:10 [INFO]   --------------------------------------------------------------------------------
+                                /@@#///////@@/(@//@%/(@.@(       @@
+                            @@//////////////////////////////#*  @@@
+                          @////@//(///////////@@@@@///@//@/@**//@@(
+                        @///////@///////////////@@@@    (           @,
+                       @/(&/@////////////////////                     @
+                      @////////////////////////@@                      @
+                    @%////////(//////////%/////&@            @@       *,@           ______________
+               @@@@@/@/#/////(&//////////////////                       .@         /              \
+          *@@@@@.    .%///(//@//////////////////&.   .@@,                 @%      / Don't mind me  \
+        @@%           .&@&&/@.@//&/////(//////////    @@@@@@@@@         .. &@    / I'm just looking \
+      @@%               @@@@@   @&/////////////////#   @/       V  @@/ ,@@@ @   <  for some trash... |
+  @@@%                   @@@@        .%@@@@//////#@ @   @@         @     .,.     \__________________/
+                                            @@@/@(  (@@@@% @/\      %
+                                             @@@@(    .     .@@/\   #
+                                               @                  %@%
+  --------------------------------------------------------------------------------
+  2026-05-18 13:03:10 [INFO]   ---------------------------------------------
+  2026-05-18 13:03:10 [INFO]    Super-linter
+  2026-05-18 13:03:10 [INFO]    - Image Creation Date: 2026-03-31T20:20:49Z
+  2026-05-18 13:03:10 [INFO]    - Image Revision: 9e863354e3ff62e0727d37183162c4a88873df41
+  2026-05-18 13:03:10 [INFO]    - Image Version: 8.6.0
+  2026-05-18 13:03:10 [INFO]   ---------------------------------------------
+  2026-05-18 13:03:10 [INFO]   ---------------------------------------------
+  2026-05-18 13:03:10 [INFO]    Super-Linter source code can be found at:
+  2026-05-18 13:03:10 [INFO]    - https://github.com/super-linter/super-linter
+  2026-05-18 13:03:10 [INFO]   ---------------------------------------------
+  2026-05-18 13:03:10 [INFO]   - Validating all files in code base...
+  2026-05-18 13:03:10 [INFO]   This version of Super-linter includes the following tools:
+  [ANSIBLE] ansible-lint: 26.3.0
+  [ARM] arm-ttk: 0.27
+  [BASH] shellcheck: 0.11.0
+  [BASH_EXEC] bash-exec: Version command not supported
+  [BIOME_FORMAT] biome: 2.4.10
+  [BIOME_LINT] biome: 2.4.10
+  [CHECKOV] checkov: 3.2.513
+  [CLANG_FORMAT] clang-format: 21.1.2
+  [CLOJURE] clj-kondo: v2026.01.19
+  [CLOUDFORMATION] cfn-lint: 1.47.1
+  [COFFEESCRIPT] coffeelint: 5.2.11
+  [CPP] cpplint: 2.0.2
+  [CSHARP] dotnet: 10.0.201
+  [CSS] stylelint: 17.6.0
+  [CSS_PRETTIER] prettier: 3.8.1
+  [DART] dart: 3.11.2
+  [DOCKERFILE_HADOLINT] hadolint: 2.14.0
+  [DOTNET_SLN_FORMAT_ANALYZERS] dotnet: 10.0.201
+  [DOTNET_SLN_FORMAT_STYLE] dotnet: 10.0.201
+  [DOTNET_SLN_FORMAT_WHITESPACE] dotnet: 10.0.201
+  [EDITORCONFIG] editorconfig-checker: v3.6.1
+  [ENV] dotenv-linter: 4.0.0
+  [GITHUB_ACTIONS] actionlint: 1.7.12
+  [GITHUB_ACTIONS_ZIZMOR] zizmor: 1.23.1
+  [GITLEAKS] gitleaks: v8.30.1
+  [GIT_COMMITLINT] commitlint: @commitlint/cli@20.5.0
+  [GIT_MERGE_CONFLICT_MARKERS] git-merge-conflict-markers: 1.0.0
+  [GOOGLE_JAVA_FORMAT] google-java-format: 1.35.0
+  [GO] golangci-lint: 2.11.4
+  [GO_MODULES] golangci-lint: 2.11.4
+  [GO_RELEASER] goreleaser: 2.15.1
+  [GRAPHQL_PRETTIER] prettier: 3.8.1
+  [GROOVY] npm-groovy-lint: 17.0.3
+  [HTML] htmlhint: 1.9.2
+  [HTML_PRETTIER] prettier: 3.8.1
+  [JAVASCRIPT_ES] eslint: v9.39.2
+  [JAVASCRIPT_PRETTIER] prettier: 3.8.1
+  [JAVA] checkstyle: 13.4.0
+  [JSCPD] jscpd: 4.0.8
+  [JSONC] eslint: v9.39.2
+  [JSONC_PRETTIER] prettier: 3.8.1
+  [JSON] eslint: v9.39.2
+  [JSON_PRETTIER] prettier: 3.8.1
+  [JSX] eslint: v9.39.2
+  [JSX_PRETTIER] prettier: 3.8.1
+  [JUPYTER_NBQA_BLACK] nbqa: Version command not supported
+  [JUPYTER_NBQA_FLAKE8] nbqa: Version command not supported
+  [JUPYTER_NBQA_ISORT] nbqa: Version command not supported
+  [JUPYTER_NBQA_MYPY] nbqa: Version command not supported
+  [JUPYTER_NBQA_PYLINT] nbqa: Version command not supported
+  [JUPYTER_NBQA_RUFF] nbqa: Version command not supported
+  [KOTLIN] ktlint: 1.8.0
+  [KUBERNETES_KUBECONFORM] kubeconform: v0.7.0
+  [LATEX] chktex: v1.7.10
+  [LUA] lua: 5.4.8
+  [MARKDOWN] markdownlint: 0.48.0
+  [MARKDOWN_PRETTIER] prettier: 3.8.1
+  [NATURAL_LANGUAGE] textlint: v15.5.2
+  [OPENAPI] spectral: 6.15.0
+  [PERL] perl: (v5.42.0)
+  [PHP_BUILTIN] php: 8.4.17
+  [PHP_PHPCS] phpcs: 4.0.1
+  [PHP_PHPSTAN] phpstan: 2.1.40
+  [PHP_PSALM] psalm: 6.15.1@28dc127af1b5aecd52314f6f645bafc10d0e11f9
+  [POWERSHELL] pwsh: 7.6.0-preview.4
+  [PRE_COMMIT] pre-commit: 4.5.1
+  [PROTOBUF] protolint: 0.56.4(67278bf)
+  [PYTHON_BLACK] black: 26.3.1
+  [PYTHON_FLAKE8] flake8: 7.3.0
+  [PYTHON_ISORT] isort: 8.0.1
+  [PYTHON_MYPY] mypy: 1.19.1
+  [PYTHON_PYLINT] pylint: 4.0.5
+  [PYTHON_RUFF] ruff: 0.15.8
+  [PYTHON_RUFF_FORMAT] ruff: 0.15.8
+  [RENOVATE] renovate-config-validator: 43.101.3
+  [RUBY] rubocop: 1.86.0
+  [RUST_2015] rustfmt: 1.8.0
+  [RUST_2018] rustfmt: 1.8.0
+  [RUST_2021] rustfmt: 1.8.0
+  [RUST_2024] rustfmt: 1.8.0
+  [RUST_CLIPPY] clippy: 0.1.91
+  [R] R: 4.5.2
+  [SCALAFMT] scalafmt: 3.10.7
+  [SHELL_SHFMT] shfmt: v3.13.0
+  [SNAKEMAKE_LINT] snakemake: 9.19.0
+  [SNAKEMAKE_SNAKEFMT] snakefmt: 1.0.0
+  [SPELL_CODESPELL] codespell: 2.4.2
+  [SQLFLUFF] sqlfluff: 4.1.0
+  [STATES] asl-validator: 4.0.0
+  [TERRAFORM_FMT] terraform: 1.14.8
+  [TERRAFORM_TFLINT] tflint: 0.61.0
+  [TERRAGRUNT] terragrunt: version
+  [TRIVY] trivy: 0.69.3
+  [TSX] eslint: v9.39.2
+  [TYPESCRIPT_ES] eslint: v9.39.2
+  [TYPESCRIPT_PRETTIER] prettier: 3.8.1
+  [VUE] eslint: v9.39.2
+  [VUE_PRETTIER] prettier: 3.8.1
+  [XML] xmllint: 21309
+  [YAML] yamllint: 1.38.0
+  [YAML_PRETTIER] prettier: 3.8.1
+  2026-05-18 13:03:10 [INFO]   The default branch for this repository is set to: main
+  2026-05-18 13:03:10 [INFO]   Successfully found GITHUB_EVENT_PATH: /github/workflow/event.json]
+  2026-05-18 13:03:10 [INFO]   Successfully found GITHUB_SHA: 6651536b40f1bedf137fd9f575e6ee5940786328
+  2026-05-18 13:03:10 [INFO]   Successfully found GITHUB_TOKEN.
+  2026-05-18 13:03:10 [INFO]   Successfully found GITHUB_REPOSITORY: tshifhiwa021006/mygitactions
+  2026-05-18 13:03:10 [INFO]   Successfully found GITHUB_RUN_ID 26035152304
+  2026-05-18 13:03:11 [WARN]   ENABLE_GITHUB_ACTIONS_STEP_SUMMARY is set to false, ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT is set to true, but SAVE_SUPER_LINTER_SUMMARY is set to false. Set SAVE_SUPER_LINTER_SUMMARY to true if you set ENABLE_GITHUB_ACTIONS_STEP_SUMMARY or ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT to true.
+  2026-05-18 13:03:11 [INFO]   --------------------------------------------
+  2026-05-18 13:03:11 [INFO]   Validating the configuration
+  .git
+  2026-05-18 13:03:12 [WARN]   Git commit message validation with commitlint is enabled, but no commitlint configuration file is available. Disabling commitlint. To suppress this message, either disable Git commit validation by setting VALIDATE_GIT_COMMITLINT to false in your Super-linter configuration, or provide a commitlint configuration file.
+  2026-05-18 13:03:15 [INFO]   Building the list of files and directories to check
+  2026-05-18 13:03:16 [INFO]   Successfully gathered list of files...
+  2026-05-18 13:03:16 [WARN]   Black and Ruff are both enabled, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for CSS, SCSS, and SASS files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for GraphQL files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for HTML files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for JavaScript files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for JSON files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for JSONC and JSON5 files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for JSX files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for TypeScript files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome format and Prettier are both enabled for Vue files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and Stylelint are both enabled for CSS, SCSS, and SASS files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for JavaScript files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for JSON files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for JSONC and JSON5 files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for JSX files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for TSX files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for TypeScript files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+  2026-05-18 13:03:16 [WARN]   Biome lint and ESLint are both enabled for Vue files, and might conflict with each other. To avoid potential conflicts, keep only one of the two enabled, and disable the other.
+2026-05-18 13:03:27 [INFO]   ----------------------------------------------
+2026-05-18 13:03:27 [INFO]   ----------------------------------------------
+BIOME_FORMAT
+BIOME_LINT
+CHECKOV
+GITHUB_ACTIONS
+GITHUB_ACTIONS_ZIZMOR
+GITLEAKS
+GIT_MERGE_CONFLICT_MARKERS
+JSCPD
+MARKDOWN
+MARKDOWN_PRETTIER
+NATURAL_LANGUAGE
+PRE_COMMIT
+SPELL_CODESPELL
+  Notice: 18 13:03:30 [NOTICE]   Successfully linted SPELL_CODESPELL
+  2026-05-18 13:03:30 [WARN]   Failed to call GitHub API (https://api.github.com/repos/tshifhiwa021006/mygitactions/statuses/6651536b40f1bedf137fd9f575e6ee5940786328): curl: (22) The requested URL returned error: 403
+  2026-05-18 13:03:30 [WARN]   Failed to create GitHub Commit Status
+  2026-05-18 13:03:30 [WARN]   Error while creating GitHub commit status for SPELL_CODESPELL.
+TRIVY
+YAML
+  Notice: 18 13:03:30 [NOTICE]   Successfully linted YAML
+  2026-05-18 13:03:30 [INFO]   Stdout contents for YAML:
+  ------
+  Warning: orkspace/.github/workflows/superlinter.yml:1:1: [warning] missing document start "---" (document-start)
+  ------
+  2026-05-18 13:03:30 [WARN]   Failed to call GitHub API (https://api.github.com/repos/tshifhiwa021006/mygitactions/statuses/6651536b40f1bedf137fd9f575e6ee5940786328): curl: (22) The requested URL returned error: 403
+  2026-05-18 13:03:30 [WARN]   Failed to create GitHub Commit Status
+  2026-05-18 13:03:30 [WARN]   Error while creating GitHub commit status for YAML.
+YAML_PRETTIER
+  Notice: 18 13:03:30 [NOTICE]   Successfully linted YAML_PRETTIER
+  2026-05-18 13:03:30 [INFO]   Stdout contents for YAML_PRETTIER:
+  ------
+  Checking formatting...
+  All matched files use Prettier code style!
+  ------
+  2026-05-18 13:03:31 [WARN]   Failed to call GitHub API (https://api.github.com/repos/tshifhiwa021006/mygitactions/statuses/6651536b40f1bedf137fd9f575e6ee5940786328): curl: (22) The requested URL returned error: 403
+  2026-05-18 13:03:31 [WARN]   Failed to create GitHub Commit Status
+  2026-05-18 13:03:31 [WARN]   Error while creating GitHub commit status for YAML_PRETTIER.
+Error: -18 13:03:31 [ERROR]   Super-linter detected linting errors
