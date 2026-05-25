@@ -1,4 +1,4 @@
-name: Izi Patrol Deployment
+name: Website Deployment
 
 on:
   push:
@@ -11,11 +11,12 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
+    name: Build and Deploy Website
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Run Super-Linter
@@ -25,10 +26,10 @@ jobs:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: true
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Website
+      - name: Upload Website Files
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
